@@ -26,6 +26,17 @@ dependencies {
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+
+    implementation 'org.springframework:spring-core:5.3.27'
+    implementation 'org.springframework:spring-context:5.3.27'
+    implementation 'org.springframework:spring-webmvc:5.3.27'
+    implementation 'org.springframework:spring-test:5.3.27'
+
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+
+    implementation 'org.apache.logging.log4j:log4j-core:2.20.0'
+    implementation 'org.apache.logging.log4j:log4j-api:2.20.0'
 }
 
 test {
