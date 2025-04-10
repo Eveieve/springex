@@ -12,16 +12,18 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 
-@ExtendWith(SpringExtension.class)
+@ExtendWith(SpringExtension.class) // junit5에서 스프링과 연동할 수 있게 해주는 어노테이션. SpringExttension 통해 Junit테스트에 스프링 컨텍스트 연결해줌.
+// file: 파일 시스템 경로로 직접 읽겠다.
 @ContextConfiguration(locations = "file:src/main/webapp/WEB-INF/root-context.xml") // 빈들에 대한 등록정보인 root-context.xml을 알려줌. 참조해서 테스트할것임
 public class SampleTests {
 
+    // 빈 : 스프링에서는 객체를 직접 생성하지않고 설정파일/어노테이션을 통해 대신 만들어줌. 스프링이 직접 생성해서 관리하는 객체를 빈이라고 부름.
     @Autowired
     private SampleService sampleService;
 
     @Test
     public void testService() {
-
+        // 널이 아니라는 건 스프링이 객ㅊ체를 주입해줬다는 것임.
         Assertions.assertNotNull(sampleService);
     }
 
@@ -38,5 +40,12 @@ public class SampleTests {
  *
  * @ContextConfiguration(locations "file/src/main/webapp/WEB-INF/root-contexnt.xml)
  * 스프링 설정 정보를 로딩하기 위해 설정함.
+ *
+ *
+ * Bean을 등록하는 방법 >
+ * 1. XML 방식
+ * 2. 어노테이션 방식 (@Service, @Repository)..
+ * 빈으로 등록하면 다른 클래스에서 Autowired로 주입할 수 있다. 
+ *
  *
  */
