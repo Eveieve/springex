@@ -1,4 +1,4 @@
-package com.ssg.springex.mapper;
+package com.ssg.springex.mappers;
 
 import org.apache.ibatis.annotations.Select;
 

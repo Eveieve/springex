@@ -26,6 +26,8 @@
 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
+<!--        하위디렉토리까지 포함해서~ -->
+        <property name = "mapperLocations" value="classpath:/mappers/**/*.xml"></property>
     </bean>
-    <mybatis:scan base-package="com.ssg.springex.mapper"></mybatis:scan>
+    <mybatis:scan base-package="com.ssg.springex.mappers"></mybatis:scan>
 </beans>

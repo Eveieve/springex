@@ -1,4 +1,4 @@
-package com.ssg.springex.mapper;
+package com.ssg.springex.mappers;
 
 import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Test;
@@ -16,8 +16,16 @@ public class TimeMapperTests {
     @Autowired(required = false)
     private TimeMapper mapper;
 
+    @Autowired(required = false)
+    private TimeMapper2 mapper2;
+
     @Test
     public void TimeMapperTest() {
         log.info(mapper);
+    }
+
+    @Test
+    public void TimeMapperTest2() {
+        log.info(mapper2.getNow());
     }
 }
