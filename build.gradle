@@ -55,6 +55,9 @@ dependencies {
     implementation group: 'org.springframework', name: 'spring-tx', version: '5.3.27'
     implementation 'org.mybatis:mybatis:3.5.7'
     implementation 'org.mybatis:mybatis-spring:2.0.6'
+
+    implementation 'org.springframework:spring-webmvc:5.3.33'
+
 }
 
 test {
