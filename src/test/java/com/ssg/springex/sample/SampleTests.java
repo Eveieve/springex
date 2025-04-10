@@ -3,6 +3,7 @@ package com.ssg.springex.sample;
 
 
 
+import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -11,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-
+@Log4j2
 @ExtendWith(SpringExtension.class) // junit5에서 스프링과 연동할 수 있게 해주는 어노테이션. SpringExttension 통해 Junit테스트에 스프링 컨텍스트 연결해줌.
 // file: 파일 시스템 경로로 직접 읽겠다.
 @ContextConfiguration(locations = "file:src/main/webapp/WEB-INF/root-context.xml") // 빈들에 대한 등록정보인 root-context.xml을 알려줌. 참조해서 테스트할것임
@@ -24,6 +25,7 @@ public class SampleTests {
     @Test
     public void testService() {
         // 널이 아니라는 건 스프링이 객ㅊ체를 주입해줬다는 것임.
+        log.info(sampleService);
         Assertions.assertNotNull(sampleService);
     }
 
@@ -45,7 +47,7 @@ public class SampleTests {
  * Bean을 등록하는 방법 >
  * 1. XML 방식
  * 2. 어노테이션 방식 (@Service, @Repository)..
- * 빈으로 등록하면 다른 클래스에서 Autowired로 주입할 수 있다. 
+ * 빈으로 등록하면 다른 클래스에서 Autowired로 주입할 수 있다.
  *
  *
  */

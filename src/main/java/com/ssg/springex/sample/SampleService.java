@@ -15,5 +15,5 @@ import org.springframework.stereotype.Service;
 public class SampleService {
 
     @Qualifier("normal") // 이름 지정해주기
-    private SampleDAO sampleDAO;
+    private final SampleDAO sampleDAO;
 }
